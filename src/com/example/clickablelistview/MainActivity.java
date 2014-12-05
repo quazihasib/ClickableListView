@@ -2,21 +2,17 @@ package com.example.clickablelistview;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity
+{
 
 	private static final String TAG = MainActivity.class.getSimpleName();
 
-	/**
-	 * Called when the activity is first created.
-	 */
+	
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 

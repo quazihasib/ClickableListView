@@ -16,12 +16,14 @@ import java.util.ArrayList;
  * Created with IntelliJ IDEA. User: Shahab Date: 8/22/12 Time: 11:37 AM To
  * change this template use File | Settings | File Templates.
  */
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapter extends BaseAdapter
+{
 
 	private static final String TAG = CustomAdapter.class.getSimpleName();
 	ArrayList<DataModel> listArray;
 
-	public CustomAdapter() {
+	public CustomAdapter() 
+	{
 		listArray = new ArrayList<DataModel>(5);
 		listArray.add(new DataModel("name1", 5, 1.8, "Java"));
 		listArray.add(new DataModel("name2", 10, 2.8, "Python"));
@@ -31,24 +33,32 @@ public class CustomAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public int getCount() {
-		return listArray.size(); // total number of elements in the list
+	public int getCount()
+	{
+		// total number of elements in the list
+		return listArray.size(); 
 	}
 
 	@Override
-	public Object getItem(int i) {
-		return listArray.get(i); // single item in the list
+	public Object getItem(int i) 
+	{
+		// single item in the list
+		return listArray.get(i); 
 	}
 
 	@Override
-	public long getItemId(int i) {
-		return i; // index number
+	public long getItemId(int i) 
+	{
+		// index number
+		return i; 
 	}
 
 	@Override
-	public View getView(int index, View view, final ViewGroup parent) {
+	public View getView(int index, View view, final ViewGroup parent) 
+	{
 
-		if (view == null) {
+		if (view == null) 
+		{
 			LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 			view = inflater.inflate(R.layout.single_list_item, parent, false);
 		}
@@ -64,13 +74,12 @@ public class CustomAdapter extends BaseAdapter {
 		textView = (TextView) view.findViewById(R.id.tv_double_data);
 		textView.setText("" + dataModel.getaDouble());
 
-		// button click listener
-		// this chunk of code will run, if user click the button
-		// because, we set the click listener on the button only
 
-		button.setOnClickListener(new View.OnClickListener() {
+		button.setOnClickListener(new View.OnClickListener() 
+		{
 			@Override
-			public void onClick(View view) {
+			public void onClick(View view) 
+			{
 				Log.d(TAG, "string: " + dataModel.getName());
 				Log.d(TAG, "int: " + dataModel.getAnInt());
 				Log.d(TAG, "double: " + dataModel.getaDouble());
@@ -88,9 +97,11 @@ public class CustomAdapter extends BaseAdapter {
 		// this chunk of code will execute
 		// because we set the click listener on the whole view
 
-		view.setOnClickListener(new View.OnClickListener() {
+		view.setOnClickListener(new View.OnClickListener()
+		{
 			@Override
-			public void onClick(View view) {
+			public void onClick(View view)
+			{
 				Log.d(TAG, "string: " + dataModel.getName());
 				Log.d(TAG, "int: " + dataModel.getAnInt());
 				Log.d(TAG, "double: " + dataModel.getaDouble());
